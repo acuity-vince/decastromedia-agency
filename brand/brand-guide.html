@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DeCastro Media — Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4 landscape; margin: 0; }
+  html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: 'Figtree', sans-serif; color: #e8f1ee; background: #05080a; }
+
+  .page {
+    width: 297mm; height: 210mm;
+    background: #05080a;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    padding: 18mm 20mm;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .glow {
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 45% at 75% 12%, rgba(23, 232, 194, 0.12), transparent 65%),
+      radial-gradient(ellipse 40% 35% at 8% 90%, rgba(10, 157, 132, 0.08), transparent 70%);
+  }
+
+  .display { font-family: 'Bricolage Grotesque', sans-serif; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10pt; letter-spacing: 0.2em;
+    color: #17e8c2; margin-bottom: 8mm;
+  }
+  .page-num {
+    position: absolute; bottom: 12mm; right: 20mm;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt; letter-spacing: 0.15em; color: rgba(157, 180, 176, 0.5);
+  }
+  .page-brand {
+    position: absolute; bottom: 12mm; left: 20mm;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt; letter-spacing: 0.15em; color: rgba(157, 180, 176, 0.5);
+  }
+
+  h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 42pt; line-height: 1.04; letter-spacing: -0.02em; }
+  h2 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26pt; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 8mm; }
+  h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 13pt; letter-spacing: -0.01em; margin-bottom: 2mm; }
+  .dim { color: rgba(157, 180, 176, 0.6); }
+  .body-text { color: #9db4b0; font-size: 10.5pt; line-height: 1.6; }
+  .spec { font-family: 'JetBrains Mono', monospace; font-size: 8pt; color: rgba(157, 180, 176, 0.75); line-height: 1.7; }
+  .spec b { color: #e8f1ee; font-weight: 500; }
+
+  .grad-text {
+    background: linear-gradient(100deg, #3fffd9 0%, #17e8c2 45%, #0fb99b 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  .grid { display: grid; gap: 6mm; }
+  .cols-2 { grid-template-columns: 1fr 1fr; }
+  .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+  .panel {
+    background: linear-gradient(160deg, rgba(23, 232, 194, 0.05), rgba(14, 21, 25, 0.4) 40%);
+    border: 1px solid rgba(148, 210, 200, 0.12);
+    border-radius: 5mm; padding: 7mm;
+  }
+
+  .swatch { border-radius: 4mm; overflow: hidden; border: 1px solid rgba(148, 210, 200, 0.12); }
+  .swatch .chip { height: 19mm; }
+  .swatch .meta { padding: 4mm 5mm; background: #0a0f12; }
+  .swatch .name { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 10.5pt; margin-bottom: 1mm; }
+
+  .btn-primary-sample {
+    display: inline-block;
+    background: linear-gradient(135deg, #3fffd9, #17e8c2 55%, #0fb99b);
+    color: #04211b; font-weight: 600; font-size: 10.5pt;
+    padding: 3.5mm 7mm; border-radius: 2.5mm;
+    box-shadow: 0 0 0 1px rgba(63, 255, 217, 0.35), 0 3mm 8mm -2mm rgba(23, 232, 194, 0.45);
+  }
+  .btn-ghost-sample {
+    display: inline-block;
+    border: 1px solid rgba(148, 210, 200, 0.22); color: #e8f1ee;
+    font-weight: 500; font-size: 10.5pt;
+    padding: 3.5mm 7mm; border-radius: 2.5mm;
+  }
+  .chip-tag {
+    display: inline-block;
+    border: 1px solid rgba(148, 210, 200, 0.12); border-radius: 10mm;
+    padding: 1.2mm 4mm;
+    font-family: 'JetBrains Mono', monospace; font-size: 7pt; letter-spacing: 0.05em;
+    color: rgba(157, 180, 176, 0.7);
+  }
+  .field-sample {
+    background: rgba(14, 21, 25, 0.6);
+    border: 1px solid rgba(148, 210, 200, 0.14);
+    border-radius: 2.5mm; padding: 3mm 4mm;
+    color: rgba(157, 180, 176, 0.45); font-size: 10pt;
+  }
+  .divider { height: 1px; background: rgba(148, 210, 200, 0.12); margin: 7mm 0; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<div class="page" style="display: flex; flex-direction: column; justify-content: space-between;">
+  <div class="glow"></div>
+  <div style="position: relative;">
+    <img src="../assets/decastro-media-white.png" alt="DeCastro Media" style="height: 22mm;">
+  </div>
+  <div style="position: relative;">
+    <p class="eyebrow">BRAND GUIDE &mdash; DECASTROMEDIA.AGENCY</p>
+    <h1>Confident, intelligent,<br><span class="dim">built for the</span> <span class="grad-text">answer era</span></h1>
+    <p class="body-text" style="max-width: 130mm; margin-top: 8mm;">
+      The visual and verbal system behind the DeCastro Media website. Dark editorial canvas, one electric Caribbean teal accent, and typography that carries the argument. Use this guide to keep every asset on brand.
+    </p>
+  </div>
+  <div style="position: relative; display: flex; justify-content: space-between;" class="spec">
+    <span>VERSION 1.0 &middot; JULY 2026</span>
+    <span>AI CONSULTING &middot; CYPRUS</span>
+  </div>
+</div>
+
+<!-- PAGE 2 — LOGO -->
+<div class="page">
+  <div class="glow"></div>
+  <div style="position: relative;">
+    <p class="eyebrow">01 &mdash; LOGO</p>
+    <h2>The mark and the wordmark</h2>
+    <div class="grid cols-2" style="margin-bottom: 6mm;">
+      <div class="panel" style="display: flex; align-items: center; justify-content: center; height: 52mm;">
+        <img src="../assets/decastro-media-white.png" alt="Full logo white" style="height: 20mm;">
+      </div>
+      <div class="panel" style="display: flex; align-items: center; justify-content: center; height: 52mm;">
+        <img src="../assets/decastro-mark-white.png" alt="DM mark white" style="height: 32mm;">
+      </div>
+      <div class="panel" style="background: #e8f1ee; display: flex; align-items: center; justify-content: center; height: 52mm;">
+        <img src="../assets/decastro-media-black.png" alt="Full logo black" style="height: 20mm;">
+      </div>
+      <div class="panel" style="padding: 7mm;">
+        <h3>Usage rules</h3>
+        <p class="spec">
+          <b>White logo</b> on dark surfaces (default) &middot; <b>black logo</b> on light surfaces only<br>
+          Full wordmark in headers and covers &middot; DM mark for footers, favicons, avatars<br>
+          Clearspace: height of the D on all sides &middot; never recolour, stretch, or add effects<br>
+          Nav size on web: <b>36px</b> tall &middot; footer mark: <b>28px</b> tall
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="page-brand">DECASTRO MEDIA &mdash; BRAND GUIDE</p>
+  <p class="page-num">02</p>
+</div>
+
+<!-- PAGE 3 — COLOR -->
+<div class="page">
+  <div class="glow"></div>
+  <div style="position: relative;">
+    <p class="eyebrow">02 &mdash; COLOR</p>
+    <h2>Dark canvas, one electric accent</h2>
+    <div class="grid cols-4" style="margin-bottom: 6mm;">
+      <div class="swatch"><div class="chip" style="background:#05080a; border-bottom: 1px solid rgba(148,210,200,0.12);"></div><div class="meta"><p class="name">Ink</p><p class="spec">#05080A<br>Page background</p></div></div>
+      <div class="swatch"><div class="chip" style="background:#0a0f12; border-bottom: 1px solid rgba(148,210,200,0.12);"></div><div class="meta"><p class="name">Surface</p><p class="spec">#0A0F12<br>Panels, cards, nav</p></div></div>
+      <div class="swatch"><div class="chip" style="background:#0e1519; border-bottom: 1px solid rgba(148,210,200,0.12);"></div><div class="meta"><p class="name">Raised</p><p class="spec">#0E1519<br>Form fields, elevated UI</p></div></div>
+      <div class="swatch"><div class="chip" style="background:#e8f1ee;"></div><div class="meta"><p class="name">Bone</p><p class="spec">#E8F1EE<br>Primary text</p></div></div>
+      <div class="swatch"><div class="chip" style="background:#9db4b0;"></div><div class="meta"><p class="name">Mist</p><p class="spec">#9DB4B0<br>Secondary text, body copy</p></div></div>
+      <div class="swatch"><div class="chip" style="background:#3fffd9;"></div><div class="meta"><p class="name">Teal Bright</p><p class="spec">#3FFFD9<br>Gradient start, focus rings</p></div></div>
+      <div class="swatch"><div class="chip" style="background:#17e8c2;"></div><div class="meta"><p class="name">Teal</p><p class="spec">#17E8C2<br>The accent. Links, labels, glow</p></div></div>
+      <div class="swatch"><div class="chip" style="background:#0a9d84;"></div><div class="meta"><p class="name">Teal Deep</p><p class="spec">#0A9D84<br>Gradient end, depth</p></div></div>
+    </div>
+    <div class="grid cols-2">
+      <div class="panel">
+        <h3>Hairlines &amp; borders</h3>
+        <p class="spec">Line: <b>rgba(148, 210, 200, 0.10)</b> &mdash; all dividers and card borders. Never solid grey; borders always carry a hint of the teal family.</p>
+      </div>
+      <div class="panel">
+        <h3>Ratio</h3>
+        <p class="spec">Dark surfaces <b>~90%</b> &middot; text tones <b>~8%</b> &middot; teal <b>~2%</b>. The accent is loud because it is rare. Never use teal for large fills or backgrounds.</p>
+      </div>
+    </div>
+  </div>
+  <p class="page-brand">DECASTRO MEDIA &mdash; BRAND GUIDE</p>
+  <p class="page-num">03</p>
+</div>
+
+<!-- PAGE 4 — GRADIENTS & EFFECTS -->
+<div class="page">
+  <div class="glow"></div>
+  <div style="position: relative;">
+    <p class="eyebrow">03 &mdash; GRADIENTS &amp; EFFECTS</p>
+    <h2>Glow, don't paint</h2>
+    <div class="grid cols-3" style="margin-bottom: 6mm;">
+      <div class="swatch">
+        <div class="chip" style="height: 30mm; background: linear-gradient(135deg, #3fffd9, #17e8c2 55%, #0fb99b);"></div>
+        <div class="meta"><p class="name">Action gradient</p><p class="spec">linear-gradient(135deg,<br>#3FFFD9, #17E8C2 55%, #0FB99B)<br>Primary buttons only</p></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="height: 30mm; background:#05080a; display:flex; align-items:center; justify-content:center;">
+          <span class="display grad-text" style="font-size: 20pt; font-weight: 700;">advantage</span>
+        </div>
+        <div class="meta"><p class="name">Text gradient</p><p class="spec">linear-gradient(100deg,<br>#3FFFD9, #17E8C2 45%, #0FB99B)<br>One keyword per headline, max</p></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="height: 30mm; background: radial-gradient(ellipse 80% 90% at 60% 20%, rgba(23,232,194,0.22), #05080a 75%);"></div>
+        <div class="meta"><p class="name">Atmospheric glow</p><p class="spec">radial-gradient(ellipse, rgba(23,232,194, 0.10&ndash;0.13), transparent 65%)<br>Hero &amp; section backgrounds</p></div>
+      </div>
+    </div>
+    <div class="grid cols-2">
+      <div class="panel">
+        <h3>Shadows</h3>
+        <p class="spec">
+          Button rest: <b>0 0 0 1px rgba(63,255,217,0.35), 0 8px 32px -8px rgba(23,232,194,0.45)</b><br>
+          Button hover: ring 0.55, glow 48px at 0.65, lift <b>translateY(-2px)</b><br>
+          Shadows are teal light, never black. No drop shadows on text or cards at rest.
+        </p>
+      </div>
+      <div class="panel">
+        <h3>Grid texture</h3>
+        <p class="spec">
+          64px grid of 1px lines at <b>rgba(148,210,200,0.035)</b>, masked with a radial fade from the top. Hero sections only. Decorative gradients never replace real content.
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="page-brand">DECASTRO MEDIA &mdash; BRAND GUIDE</p>
+  <p class="page-num">04</p>
+</div>
+
+<!-- PAGE 5 — TYPOGRAPHY -->
+<div class="page">
+  <div class="glow"></div>
+  <div style="position: relative;">
+    <p class="eyebrow">04 &mdash; TYPOGRAPHY</p>
+    <h2>Three voices, one system</h2>
+    <div class="grid" style="grid-template-columns: 1.4fr 1fr; margin-bottom: 6mm;">
+      <div class="panel">
+        <p class="spec" style="margin-bottom: 3mm;">DISPLAY &mdash; <b>Bricolage Grotesque</b> 400&ndash;800 &middot; Google Fonts</p>
+        <p class="display" style="font-size: 30pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05;">Turn AI from experiment<br><span class="dim">into your</span> <span class="grad-text">advantage</span></p>
+        <div class="divider"></div>
+        <p class="spec" style="margin-bottom: 2mm;">BODY &mdash; <b>Figtree</b> 400&ndash;600</p>
+        <p class="body-text">Most companies are stuck piloting. We help B2B leaders build AI capability that compounds &mdash; strategy that ships, teams that use it, and content that gets cited.</p>
+        <div class="divider"></div>
+        <p class="spec" style="margin-bottom: 2mm;">LABELS &mdash; <b>JetBrains Mono</b> 400&ndash;500</p>
+        <p class="mono" style="font-size: 10pt; letter-spacing: 0.2em; color: #17e8c2;">AI CONSULTING &mdash; STRATEGY &middot; TRAINING &middot; CONTENT</p>
+      </div>
+      <div class="panel">
+        <h3>Scale (web)</h3>
+        <p class="spec">
+          Hero H1: <b>84px / 1.02</b> (desktop), 48px mobile<br>
+          Section H2: <b>48px / 1.15</b><br>
+          Card H3: <b>18&ndash;28px / 1.2</b><br>
+          Body: <b>16&ndash;18px / 1.6</b><br>
+          Mono labels: <b>13px</b>, tracking 0.2em<br>
+          Tag chips: <b>11px</b> mono<br><br>
+          Headline pattern: first line bone, second line <b>mist at 60%</b>, one gradient keyword.
+        </p>
+        <div class="divider"></div>
+        <h3>Casing rules</h3>
+        <p class="spec">
+          Headlines: <b>Sentence case</b><br>
+          CTAs: <b>Title Case</b><br>
+          Data labels &amp; eyebrows: <b>ALL CAPS</b> mono<br>
+          No emoji, anywhere.
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="page-brand">DECASTRO MEDIA &mdash; BRAND GUIDE</p>
+  <p class="page-num">05</p>
+</div>
+
+<!-- PAGE 6 — COMPONENTS -->
+<div class="page">
+  <div class="glow"></div>
+  <div style="position: relative;">
+    <p class="eyebrow">05 &mdash; COMPONENTS</p>
+    <h2>The working parts</h2>
+    <div class="grid cols-3" style="margin-bottom: 6mm;">
+      <div class="panel">
+        <h3>Buttons</h3>
+        <div style="margin: 4mm 0;"><span class="btn-primary-sample">Book a Strategy Call</span></div>
+        <div style="margin-bottom: 4mm;"><span class="btn-ghost-sample">Explore Services</span></div>
+        <p class="spec">Radius <b>8px</b> &middot; padding 14&times;28px &middot; hover lifts -2px. One primary CTA per view: <b>Book a Strategy Call</b>.</p>
+      </div>
+      <div class="panel">
+        <h3>Form fields</h3>
+        <div class="field-sample" style="margin: 4mm 0;">you@company.com</div>
+        <p class="spec">Raised bg at 60% &middot; border rgba(148,210,200,0.14) &middot; radius <b>8px</b> &middot; focus: teal border + 3px teal ring at 12% &middot; mono ALL CAPS labels above.</p>
+      </div>
+      <div class="panel">
+        <h3>Tag chips</h3>
+        <div style="margin: 4mm 0; display: flex; gap: 2mm; flex-wrap: wrap;">
+          <span class="chip-tag">READINESS AUDIT</span>
+          <span class="chip-tag">TOOL SELECTION</span>
+        </div>
+        <p class="spec">Full-round pill &middot; 11px mono caps &middot; hairline border &middot; never filled, never coloured.</p>
+      </div>
+      <div class="panel" style="grid-column: span 2;">
+        <h3>Service rows &amp; panels</h3>
+        <p class="spec">
+          Service rows: hairline top border, 2px teal gradient left edge on hover, number turns teal, arrow (&#8599;) brightens and shifts. Cardless by default &mdash; cards only when clickable.<br><br>
+          Step panels: radius <b>16px</b>, gradient fill from teal 5% to raised 40%, hover lifts <b>-4px</b> and border brightens to teal 30%.
+        </p>
+      </div>
+      <div class="panel">
+        <h3>Navigation</h3>
+        <p class="spec">Fixed, 64px tall, glass blur 16px over ink at 72% &middot; mono caps links &middot; dropdown: glass panel, radius 12px &middot; mobile: hamburger, 1.5px stroke.</p>
+      </div>
+    </div>
+  </div>
+  <p class="page-brand">DECASTRO MEDIA &mdash; BRAND GUIDE</p>
+  <p class="page-num">06</p>
+</div>
+
+<!-- PAGE 7 — SPACING, MOTION, VOICE -->
+<div class="page">
+  <div class="glow"></div>
+  <div style="position: relative;">
+    <p class="eyebrow">06 &mdash; SPACING, MOTION &amp; VOICE</p>
+    <h2>How it moves and speaks</h2>
+    <div class="grid cols-3" style="margin-bottom: 6mm;">
+      <div class="panel">
+        <h3>Spacing &amp; layout</h3>
+        <p class="spec">
+          Base grid: <b>4px</b> &mdash; every measure is a multiple<br>
+          Content width: <b>max 1152px</b> (max-w-6xl)<br>
+          Page gutters: 24px mobile, 32px desktop<br>
+          Section padding: <b>112&ndash;144px</b> vertical<br>
+          Card padding: 28px &middot; grid gaps: 20px
+        </p>
+      </div>
+      <div class="panel">
+        <h3>Motion</h3>
+        <p class="spec">
+          Curve: <b>cubic-bezier(0.2, 0.8, 0.2, 1)</b><br>
+          Hero entrance: rise 28px + fade, 0.9s, staggered 0.05&ndash;0.62s<br>
+          Scroll reveal: rise 32px, 0.8s, at 15% visibility<br>
+          Hovers: 0.25&ndash;0.35s &middot; respects <b>prefers-reduced-motion</b><br>
+          Icons: Lucide, <b>1.5px stroke</b>, monochrome only
+        </p>
+      </div>
+      <div class="panel">
+        <h3>Voice</h3>
+        <p class="spec">
+          Confident, intelligent, professional &mdash; not corporate, not casual<br>
+          Lead with insight, then the offer<br>
+          AI supports human decisions &mdash; never replaces them<br>
+          No performance claims or guarantees<br>
+          Short sentences. One idea per section.
+        </p>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Headline formula</h3>
+      <p class="body-text" style="font-size: 10pt;">
+        Line one states the promise in bone white. Line two dims to mist. One word &mdash; the payoff &mdash; gets the teal gradient. Examples from the site: "Turn AI from experiment into your <span class="grad-text" style="font-weight:600;">advantage</span>" &middot; "AI strategy that ships, not <span class="grad-text" style="font-weight:600;">slideware</span>" &middot; "Get cited where your buyers <span class="grad-text" style="font-weight:600;">now ask</span>".
+      </p>
+    </div>
+  </div>
+  <p class="page-brand">DECASTRO MEDIA &mdash; BRAND GUIDE</p>
+  <p class="page-num">07</p>
+</div>
+
+</body>
+</html>

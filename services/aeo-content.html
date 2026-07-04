@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEO Content for LLMs — DeCastro Media</title>
+<meta name="description" content="Answer engine optimisation for B2B brands. Content engineered to be cited by ChatGPT, Perplexity, and Gemini — so you show up inside the answer, not below it.">
+<link rel="canonical" href="https://decastromedia.agency/services/aeo-content.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#05080a', surface: '#0a0f12', raised: '#0e1519',
+        line: 'rgba(148, 210, 200, 0.10)',
+        teal: { DEFAULT: '#17e8c2', bright: '#3fffd9', deep: '#0a9d84', dim: 'rgba(23, 232, 194, 0.55)' },
+        mist: '#9db4b0', bone: '#e8f1ee'
+      },
+      fontFamily: {
+        display: ['"Bricolage Grotesque"', 'sans-serif'],
+        body: ['Figtree', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #05080a; }
+  ::selection { background: rgba(23, 232, 194, 0.25); color: #e8f1ee; }
+  .glow-hero {
+    background:
+      radial-gradient(ellipse 55% 45% at 72% 18%, rgba(23, 232, 194, 0.13), transparent 65%),
+      radial-gradient(ellipse 40% 35% at 12% 80%, rgba(10, 157, 132, 0.09), transparent 70%);
+  }
+  .glow-contact { background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(23, 232, 194, 0.10), transparent 70%); }
+  .grid-texture {
+    background-image:
+      linear-gradient(rgba(148, 210, 200, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 210, 200, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
+  }
+  .text-gradient-teal {
+    background: linear-gradient(100deg, #3fffd9 0%, #17e8c2 45%, #0fb99b 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .nav-glass { background: rgba(5, 8, 10, 0.72); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+  .btn-primary {
+    background: linear-gradient(135deg, #3fffd9, #17e8c2 55%, #0fb99b);
+    color: #04211b;
+    box-shadow: 0 0 0 1px rgba(63, 255, 217, 0.35), 0 8px 32px -8px rgba(23, 232, 194, 0.45);
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(63, 255, 217, 0.55), 0 16px 48px -8px rgba(23, 232, 194, 0.65); }
+  .btn-primary:focus-visible, .btn-ghost:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid #3fffd9; outline-offset: 3px; border-radius: 4px;
+  }
+  .btn-ghost {
+    border: 1px solid rgba(148, 210, 200, 0.22); color: #e8f1ee;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .btn-ghost:hover { border-color: rgba(63, 255, 217, 0.55); background: rgba(23, 232, 194, 0.06); transform: translateY(-2px); }
+  .step-panel {
+    background: linear-gradient(160deg, rgba(23, 232, 194, 0.05), rgba(14, 21, 25, 0.4) 40%);
+    border: 1px solid rgba(148, 210, 200, 0.10);
+    transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .step-panel:hover { border-color: rgba(63, 255, 217, 0.30); transform: translateY(-4px); }
+  .principle-row { border-top: 1px solid rgba(148, 210, 200, 0.10); }
+  .principle-row:last-child { border-bottom: 1px solid rgba(148, 210, 200, 0.10); }
+  .field {
+    background: rgba(14, 21, 25, 0.6); border: 1px solid rgba(148, 210, 200, 0.14); color: #e8f1ee;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .field::placeholder { color: rgba(157, 180, 176, 0.45); }
+  .field:focus { outline: none; border-color: rgba(63, 255, 217, 0.6); box-shadow: 0 0 0 3px rgba(23, 232, 194, 0.12); }
+  select.field option { background: #0e1519; }
+  @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-rise { opacity: 0; animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+  .d-1 { animation-delay: 0.05s; } .d-2 { animation-delay: 0.18s; } .d-3 { animation-delay: 0.32s; } .d-4 { animation-delay: 0.46s; }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; } .reveal-delay-3 { transition-delay: 0.3s; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-rise { animation: none; opacity: 1; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body class="font-body text-bone antialiased overflow-x-hidden">
+
+<header class="fixed top-0 inset-x-0 z-50 nav-glass border-b border-line">
+  <nav class="max-w-6xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Primary">
+    <a href="../index.html" class="flex items-center gap-3">
+      <img src="../assets/decastro-media-white.png" alt="DeCastro Media" class="h-9 w-auto"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.nextElementSibling.nextElementSibling.style.display='inline';">
+      <span class="w-8 h-8 rounded-md border border-teal/40 place-items-center font-display font-bold text-teal text-sm tracking-tight" style="display:none;">DM</span>
+      <span class="font-display font-semibold tracking-tight" style="display:none;">DeCastro <span class="text-mist">Media</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 font-mono text-[13px] tracking-wide text-mist">
+      <div class="relative group">
+        <a href="../index.html#services" class="hover:text-teal transition-colors inline-flex items-center gap-1.5 py-5" aria-haspopup="true">SERVICES
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:rotate-180" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <div class="absolute left-1/2 -translate-x-1/2 top-full w-72 invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-200">
+          <div class="nav-glass border border-line rounded-xl p-2 shadow-2xl">
+            <a href="ai-strategy.html" class="block rounded-lg px-4 py-3 hover:bg-teal/5 hover:text-teal transition-colors">AI STRATEGY &amp; IMPLEMENTATION</a>
+            <a href="corporate-training.html" class="block rounded-lg px-4 py-3 hover:bg-teal/5 hover:text-teal transition-colors">CORPORATE AI TRAINING</a>
+            <a href="thought-leadership.html" class="block rounded-lg px-4 py-3 hover:bg-teal/5 hover:text-teal transition-colors">EXECUTIVE THOUGHT LEADERSHIP</a>
+            <a href="aeo-content.html" class="block rounded-lg px-4 py-3 hover:bg-teal/5 hover:text-teal transition-colors">AEO CONTENT FOR LLMS</a>
+          </div>
+        </div>
+      </div>
+      <a href="../index.html#approach" class="hover:text-teal transition-colors">APPROACH</a>
+      <a href="#contact" class="hover:text-teal transition-colors">CONTACT</a>
+    </div>
+    <a href="https://calendly.com/decastromedia/strategy-call?back=1" target="_blank" rel="noopener" class="btn-primary hidden md:inline-block rounded-lg px-5 py-2.5 text-sm font-semibold font-body">Book a Strategy Call</a>
+    <button id="menu-btn" type="button" class="md:hidden text-bone hover:text-teal transition-colors p-2 -mr-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <svg id="icon-burger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="7" y2="7"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="17" y2="17"/></svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hidden" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden nav-glass border-t border-line px-6 py-6 max-h-[calc(100vh-4rem)] overflow-y-auto">
+    <p class="font-mono text-[11px] tracking-[0.2em] text-mist/50 mb-1">SERVICES</p>
+    <a href="ai-strategy.html" class="block py-2.5 font-mono text-[13px] tracking-wide text-mist hover:text-teal transition-colors">AI STRATEGY &amp; IMPLEMENTATION</a>
+    <a href="corporate-training.html" class="block py-2.5 font-mono text-[13px] tracking-wide text-mist hover:text-teal transition-colors">CORPORATE AI TRAINING</a>
+    <a href="thought-leadership.html" class="block py-2.5 font-mono text-[13px] tracking-wide text-mist hover:text-teal transition-colors">EXECUTIVE THOUGHT LEADERSHIP</a>
+    <a href="aeo-content.html" class="block py-2.5 font-mono text-[13px] tracking-wide text-mist hover:text-teal transition-colors">AEO CONTENT FOR LLMS</a>
+    <div class="h-px bg-line my-4" aria-hidden="true"></div>
+    <a href="../index.html#approach" class="block py-2.5 font-mono text-[13px] tracking-wide text-mist hover:text-teal transition-colors">APPROACH</a>
+    <a href="#contact" class="block py-2.5 font-mono text-[13px] tracking-wide text-mist hover:text-teal transition-colors">CONTACT</a>
+    <a href="https://calendly.com/decastromedia/strategy-call?back=1" target="_blank" rel="noopener" class="btn-primary block text-center rounded-lg px-6 py-3.5 font-semibold mt-5">Book a Strategy Call</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="relative glow-hero pt-16">
+  <div class="absolute inset-0 grid-texture pointer-events-none" aria-hidden="true"></div>
+  <div class="relative max-w-6xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+    <p class="hero-rise d-1 font-mono text-[13px] tracking-[0.2em] text-teal mb-8">SERVICE 04 &mdash; AEO CONTENT FOR LLMS</p>
+    <h1 class="hero-rise d-2 font-display font-bold tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-6xl max-w-3xl">
+      Get cited where<br><span class="text-mist/60">your buyers</span> <span class="text-gradient-teal">now ask</span>
+    </h1>
+    <p class="hero-rise d-3 mt-8 max-w-xl text-lg text-mist leading-relaxed">
+      Your next customer isn't scrolling ten blue links &mdash; they're asking ChatGPT, Perplexity, and Gemini who to trust. Answer engine optimisation is how your brand becomes part of the answer instead of invisible beneath it.
+    </p>
+    <div class="hero-rise d-4 mt-10 flex flex-wrap items-center gap-4">
+      <a href="https://calendly.com/decastromedia/strategy-call?back=1" target="_blank" rel="noopener" class="btn-primary rounded-lg px-7 py-3.5 font-semibold">Book a Strategy Call</a>
+      <a href="#deliverables" class="btn-ghost rounded-lg px-7 py-3.5 font-medium">See What's Included</a>
+    </div>
+    <p class="hero-rise d-4 mt-5 text-sm text-mist/60">30 minutes, no pitch deck &mdash; we'll run a live check of how AI engines answer your category's questions today.</p>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="py-24 lg:py-32 border-t border-line">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+    <div class="reveal">
+      <p class="font-mono text-[13px] tracking-[0.2em] text-teal mb-5">THE PROBLEM</p>
+      <h2 class="font-display font-bold tracking-tight text-3xl lg:text-4xl leading-tight">
+        The search shift<br><span class="text-mist/60">already happened</span>
+      </h2>
+    </div>
+    <div class="reveal reveal-delay-1 space-y-6 text-mist leading-relaxed">
+      <p>
+        B2B research has quietly moved. Buyers ask an AI assistant to shortlist vendors, compare platforms, and explain trade-offs &mdash; and they take the answer at face value. If the models don't know your brand, you're not losing the click. You're missing the shortlist entirely.
+      </p>
+      <p>
+        Traditional SEO doesn't transfer cleanly. Answer engines don't rank pages; they synthesise answers from sources they trust. Being cited requires different structure, different authority signals, and different measurement than the search playbook most teams are still running.
+      </p>
+      <p class="text-bone font-medium">
+        The brands investing in AEO now are writing themselves into the training data and retrieval layers their competitors will spend years trying to break into.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section id="deliverables" class="py-24 lg:py-32 border-t border-line">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="reveal mb-14 max-w-2xl">
+      <p class="font-mono text-[13px] tracking-[0.2em] text-teal mb-5">WHAT YOU GET</p>
+      <h2 class="font-display font-bold tracking-tight text-3xl lg:text-4xl leading-tight">
+        A visibility engine<br><span class="text-mist/60">for the answer era</span>
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="reveal step-panel rounded-2xl p-7">
+        <p class="font-mono text-[12px] text-teal mb-4">01</p>
+        <h3 class="font-display font-semibold text-lg mb-2 tracking-tight">LLM visibility audit</h3>
+        <p class="text-mist text-[15px] leading-relaxed">We test how ChatGPT, Perplexity, Gemini, and Claude answer the questions your buyers ask &mdash; where you appear, where competitors do, and why.</p>
+      </div>
+      <div class="reveal reveal-delay-1 step-panel rounded-2xl p-7">
+        <p class="font-mono text-[12px] text-teal mb-4">02</p>
+        <h3 class="font-display font-semibold text-lg mb-2 tracking-tight">Entity foundation</h3>
+        <p class="text-mist text-[15px] leading-relaxed">Consistent, machine-readable facts about your company across the sources models trust &mdash; your site, directories, knowledge bases, and industry references.</p>
+      </div>
+      <div class="reveal reveal-delay-2 step-panel rounded-2xl p-7">
+        <p class="font-mono text-[12px] text-teal mb-4">03</p>
+        <h3 class="font-display font-semibold text-lg mb-2 tracking-tight">Answer-engine content</h3>
+        <p class="text-mist text-[15px] leading-relaxed">Content built to be quoted: direct answers, clear structure, original data points, and expert attribution &mdash; mapped to the questions that drive your pipeline.</p>
+      </div>
+      <div class="reveal step-panel rounded-2xl p-7">
+        <p class="font-mono text-[12px] text-teal mb-4">04</p>
+        <h3 class="font-display font-semibold text-lg mb-2 tracking-tight">Schema &amp; technical structure</h3>
+        <p class="text-mist text-[15px] leading-relaxed">Structured data, clean information architecture, and crawlability fixes so retrieval systems can find, parse, and confidently reuse your content.</p>
+      </div>
+      <div class="reveal reveal-delay-1 step-panel rounded-2xl p-7">
+        <p class="font-mono text-[12px] text-teal mb-4">05</p>
+        <h3 class="font-display font-semibold text-lg mb-2 tracking-tight">Authority placement</h3>
+        <p class="text-mist text-[15px] leading-relaxed">Mentions and citations seeded in the third-party sources answer engines lean on &mdash; industry publications, comparison resources, and expert roundups.</p>
+      </div>
+      <div class="reveal reveal-delay-2 step-panel rounded-2xl p-7">
+        <p class="font-mono text-[12px] text-teal mb-4">06</p>
+        <h3 class="font-display font-semibold text-lg mb-2 tracking-tight">Citation tracking</h3>
+        <p class="text-mist text-[15px] leading-relaxed">Ongoing monitoring of your share of answer across engines and buyer questions &mdash; so you can see visibility move quarter over quarter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="py-24 lg:py-32 border-t border-line">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="reveal mb-14 max-w-2xl">
+      <p class="font-mono text-[13px] tracking-[0.2em] text-teal mb-5">HOW WE THINK</p>
+      <h2 class="font-display font-bold tracking-tight text-3xl lg:text-4xl leading-tight">
+        The rules of ranking<br><span class="text-mist/60">inside the answer</span>
+      </h2>
+    </div>
+    <div class="reveal">
+      <div class="principle-row grid md:grid-cols-12 gap-4 md:gap-8 py-8 lg:py-10">
+        <span class="font-mono text-sm text-teal md:col-span-1">01</span>
+        <h3 class="font-display font-semibold text-xl tracking-tight md:col-span-4">Answer first, elaborate second</h3>
+        <p class="text-mist leading-relaxed md:col-span-7">Answer engines lift passages, not pages. Content structured as direct answers &mdash; question, clear response, then supporting depth &mdash; is what gets extracted and cited. Burying the answer in paragraph six is invisibility.</p>
+      </div>
+      <div class="principle-row grid md:grid-cols-12 gap-4 md:gap-8 py-8 lg:py-10">
+        <span class="font-mono text-sm text-teal md:col-span-1">02</span>
+        <h3 class="font-display font-semibold text-xl tracking-tight md:col-span-4">Be an entity, not just a website</h3>
+        <p class="text-mist leading-relaxed md:col-span-7">Models reason about entities: who you are, what you do, how you relate to your category. If your company's facts are inconsistent across the web, you're a blur &mdash; and blurs don't get recommended.</p>
+      </div>
+      <div class="principle-row grid md:grid-cols-12 gap-4 md:gap-8 py-8 lg:py-10">
+        <span class="font-mono text-sm text-teal md:col-span-1">03</span>
+        <h3 class="font-display font-semibold text-xl tracking-tight md:col-span-4">Original data earns citations</h3>
+        <p class="text-mist leading-relaxed md:col-span-7">Engines cite sources that add something: proprietary research, real numbers, expert positions. Rewording what already ranks earns nothing. We build content assets that are the source, not a summary of one.</p>
+      </div>
+      <div class="principle-row grid md:grid-cols-12 gap-4 md:gap-8 py-8 lg:py-10">
+        <span class="font-mono text-sm text-teal md:col-span-1">04</span>
+        <h3 class="font-display font-semibold text-xl tracking-tight md:col-span-4">Third-party trust transfers</h3>
+        <p class="text-mist leading-relaxed md:col-span-7">When answer engines assess who leads a category, they weigh what independent sources say. Placement in the publications and comparison resources models already trust moves you into answers faster than anything on your own domain.</p>
+      </div>
+      <div class="principle-row grid md:grid-cols-12 gap-4 md:gap-8 py-8 lg:py-10">
+        <span class="font-mono text-sm text-teal md:col-span-1">05</span>
+        <h3 class="font-display font-semibold text-xl tracking-tight md:col-span-4">Measure share of answer</h3>
+        <p class="text-mist leading-relaxed md:col-span-7">Rankings and traffic don't capture AEO. The metric that matters: of the questions your buyers ask, in what share of answers do you appear &mdash; and how are you described when you do. That's what we track and report.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="py-24 lg:py-32 border-t border-line">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="reveal mb-14 max-w-2xl">
+      <p class="font-mono text-[13px] tracking-[0.2em] text-teal mb-5">THE PROCESS</p>
+      <h2 class="font-display font-bold tracking-tight text-3xl lg:text-4xl leading-tight">
+        From invisible<br><span class="text-mist/60">to inside the answer</span>
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-4 gap-5">
+      <div class="reveal step-panel rounded-2xl p-7">
+        <p class="font-mono text-[12px] text-teal mb-5">WEEKS 1&ndash;2</p>
+        <h3 class="font-display font-semibold text-lg mb-2 tracking-tight">Audit</h3>
+        <p class="text-mist text-[15px] leading-relaxed">Visibility testing across engines, competitor benchmarking, question mapping.</p>
+      </div>
+      <div class="reveal reveal-delay-1 step-panel rounded-2xl p-7">
+        <p class="font-mono text-[12px] text-teal mb-5">WEEKS 3&ndash;4</p>
+        <h3 class="font-display font-semibold text-lg mb-2 tracking-tight">Fix foundations</h3>
+        <p class="text-mist text-[15px] leading-relaxed">Entity consistency, schema, and technical structure across your properties.</p>
+      </div>
+      <div class="reveal reveal-delay-2 step-panel rounded-2xl p-7">
+        <p class="font-mono text-[12px] text-teal mb-5">MONTHLY</p>
+        <h3 class="font-display font-semibold text-lg mb-2 tracking-tight">Publish</h3>
+        <p class="text-mist text-[15px] leading-relaxed">Answer-engine content and authority placements, mapped to buyer questions.</p>
+      </div>
+      <div class="reveal reveal-delay-3 step-panel rounded-2xl p-7">
+        <p class="font-mono text-[12px] text-teal mb-5">QUARTERLY</p>
+        <h3 class="font-display font-semibold text-lg mb-2 tracking-tight">Track &amp; refine</h3>
+        <p class="text-mist text-[15px] leading-relaxed">Share-of-answer reporting and re-audit. Double down where you're winning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative py-24 lg:py-32 glow-contact border-t border-line">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 lg:gap-24">
+    <div class="reveal">
+      <p class="font-mono text-[13px] tracking-[0.2em] text-teal mb-5">GET STARTED</p>
+      <h2 class="font-display font-bold tracking-tight text-4xl lg:text-5xl leading-tight mb-6">
+        Show up inside<br><span class="text-mist/60">the answer</span>
+      </h2>
+      <p class="text-mist leading-relaxed max-w-md mb-8">
+        Ask ChatGPT who leads your category. If the answer isn't you, let's talk. We'll start with a visibility audit so you can see exactly where you stand before committing to anything.
+      </p>
+      <a href="https://calendly.com/decastromedia/strategy-call?back=1" target="_blank" rel="noopener" class="btn-primary inline-block rounded-lg px-7 py-3.5 font-semibold mb-4">Book a Strategy Call</a>
+      <p class="text-mist/60 text-sm max-w-md mb-10">On the call: a live check of how ChatGPT and Perplexity answer your buyers' questions &mdash; you'll see the gap (or the win) with your own eyes.</p>
+      <div class="space-y-4 font-mono text-sm">
+        <p class="text-mist/70">EMAIL
+          <a href="mailto:hello@decastromedia.agency" class="block text-bone hover:text-teal transition-colors mt-1 font-body text-base">hello@decastromedia.agency</a>
+        </p>
+      </div>
+    </div>
+    <form class="reveal reveal-delay-1 space-y-5" action="mailto:hello@decastromedia.agency" method="post" enctype="text/plain">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="name" class="block font-mono text-[12px] tracking-wide text-mist/70 mb-2">NAME</label>
+          <input class="field w-full rounded-lg px-4 py-3" type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="email" class="block font-mono text-[12px] tracking-wide text-mist/70 mb-2">WORK EMAIL</label>
+          <input class="field w-full rounded-lg px-4 py-3" type="email" id="email" name="email" placeholder="you@company.com" required>
+        </div>
+      </div>
+      <div>
+        <label for="company" class="block font-mono text-[12px] tracking-wide text-mist/70 mb-2">COMPANY</label>
+        <input class="field w-full rounded-lg px-4 py-3" type="text" id="company" name="company" placeholder="Company name">
+      </div>
+      <div>
+        <label for="interest" class="block font-mono text-[12px] tracking-wide text-mist/70 mb-2">WHAT DO YOU NEED?</label>
+        <select class="field w-full rounded-lg px-4 py-3" id="interest" name="interest">
+          <option>AI strategy &amp; implementation</option>
+          <option>Corporate AI training</option>
+          <option>Executive thought leadership</option>
+          <option selected>AEO content for LLMs</option>
+          <option>Not sure yet — let's talk</option>
+        </select>
+      </div>
+      <div>
+        <label for="message" class="block font-mono text-[12px] tracking-wide text-mist/70 mb-2">MESSAGE</label>
+        <textarea class="field w-full rounded-lg px-4 py-3 min-h-32 resize-y" id="message" name="message" placeholder="What questions should AI engines answer with your brand?"></textarea>
+      </div>
+      <button type="submit" class="btn-primary rounded-lg px-8 py-4 font-semibold w-full sm:w-auto">Send Message</button>
+      <p class="font-mono text-[12px] text-mist/60 tracking-wide">REPLY WITHIN ONE BUSINESS DAY</p>
+    </form>
+  </div>
+</section>
+
+<!-- OTHER SERVICES -->
+<section class="py-16 border-t border-line">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <p class="font-mono text-[13px] tracking-[0.2em] text-mist/60 mb-6">EXPLORE OTHER SERVICES</p>
+    <div class="flex flex-wrap gap-4">
+      <a href="ai-strategy.html" class="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium">AI Strategy &amp; Implementation</a>
+      <a href="corporate-training.html" class="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium">Corporate AI Training</a>
+      <a href="thought-leadership.html" class="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium">Executive Thought Leadership</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="border-t border-line py-10">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <img src="../assets/decastro-mark-white.png" alt="" class="h-7 w-auto" onerror="this.remove();">
+      <span class="font-mono text-[12px] text-mist/60 tracking-wide">DECASTRO MEDIA &copy; 2026 &middot; DECASTROMEDIA.AGENCY</span>
+    </div>
+    <div class="flex items-center gap-5" aria-label="Social media">
+      <a href="https://www.linkedin.com/company/decastromedia" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-mist/60 hover:text-teal transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://www.instagram.com/decastrodigital/" target="_blank" rel="noopener" aria-label="Instagram" class="text-mist/60 hover:text-teal transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.facebook.com/decastromedia" target="_blank" rel="noopener" aria-label="Facebook" class="text-mist/60 hover:text-teal transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+    </div>
+    <p class="font-mono text-[12px] text-mist/60 tracking-wide">AI CONSULTING &middot; CYPRUS</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconBurger = document.getElementById('icon-burger');
+  const iconClose = document.getElementById('icon-close');
+  function setMenu(open) {
+    mobileMenu.classList.toggle('hidden', !open);
+    iconBurger.classList.toggle('hidden', open);
+    iconClose.classList.toggle('hidden', !open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  menuBtn.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+  mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+</script>
+
+</body>
+</html>
